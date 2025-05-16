@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+	{% block title %}
+		Login
+	{% endblock %}
+
+	{% block extracss %}
+	<!-- Custom styles for this template -->
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+	<style>
+        body {
+            background-image: url('https://www.shutterstock.com/shutterstock/videos/3437833063/thumb/1.jpg?ip=x480');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    {% endblock %}
+
+	{% block content %}
+	<form class="form-signin text-center" method="POST" action="">
+		{% csrf_token %}
+	    <img class="mb-4" src="https://img.icons8.com/external-parzival-1997-detailed-outline-parzival-1997/64/external-password-manager-internet-fraud-and-cybercrime-parzival-1997-detailed-outline-parzival-1997.png" alt="" width="72" height="72">
+	    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+
+	    {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				{{ message }}
+			</div>
+        {% endfor %}	    
+	    <label for="inputEmail" class="sr-only">Username</label>
+	    <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+	    <label for="inputPassword" class="sr-only">Password</label>
+	    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" style="margin-bottom: 10px;" required>
+	    <div class="checkbox mb-2">
+	        <label>
+	            <input type="checkbox" value="remember-me"> Remember me
+	        </label>
+	    </div>
+	    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+	    <p class="mt-5 mb-3 text-muted">&copy; 2024-{% now "Y' %}</p>
+	</form>
+	{% endblock %}
