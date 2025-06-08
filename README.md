@@ -16,7 +16,7 @@ passpass, a password manager based upon Django Project with login, one time regi
 5) Password saving, editing and deleting functionality
 
 ## How to install?
-1) Clone this repo : "https://github.com/SujayKumarMondal/Password_Manager_Django" in your local machine, using `git clone ...`
+1) Clone this repo : "https://github.com/SujayKumarMondal10/Password_Manager_Django" in your local machine, using `git clone ...`
 2) Get inside `passpass` directory
 3) Initialize the virtual environment in this directory by `python -m venv .`. Note: Use Python3
 4) Then `source bin/activate`
